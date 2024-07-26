@@ -1,0 +1,81 @@
+### Register a new user
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "newuser",
+  "password": "password123",
+  "role": "user"  // or "admin" for admin users
+}
+
+### User login
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "newuser",
+  "password": "password123"
+}
+
+### Admin login
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "adminpassword"
+}
+
+### Get all products (Admin only)
+GET http://localhost:3000/api/products
+Authorization: Bearer <YOUR_ADMIN_JWT_TOKEN>
+
+### Create a new product (Admin only)
+POST http://localhost:3000/api/products
+Content-Type: application/json
+Authorization: Bearer <YOUR_ADMIN_JWT_TOKEN>
+
+{
+  "name": "New Skincare Product",
+  "category": "Skincare",
+  "price": 19.99,
+  "stock": 50,
+  "description": "A nice skincare product"
+}
+
+### Update a product (Admin only)
+PUT http://localhost:3000/api/products/1
+Content-Type: application/json
+Authorization: Bearer <YOUR_ADMIN_JWT_TOKEN>
+
+{
+  "name": "Updated Skincare Product",
+  "category": "Skincare",
+  "price": 24.99,
+  "stock": 30,
+  "description": "An updated nice skincare product"
+}
+
+### Delete a product (Admin only)
+DELETE http://localhost:3000/api/products/1
+Authorization: Bearer <YOUR_ADMIN_JWT_TOKEN>
+
+### Get all sessions (Admin only)
+GET http://localhost:3000/api/sessions
+Authorization: Bearer <YOUR_ADMIN_JWT_TOKEN>
+
+### Create a payment (User only)
+POST http://localhost:3000/api/payments
+Content-Type: application/json
+Authorization: Bearer <YOUR_USER_JWT_TOKEN>
+
+{
+  "productId": 1,
+  "quantity": 2
+}
+
+### Get all payments (User only)
+GET http://localhost:3000/api/payments
+Authorization: Bearer <YOUR_USER_JWT_TOKEN>
+
+
