@@ -7,7 +7,7 @@ This documentation provides a detailed guide to using the API endpoints for the 
 1. [Authentication](#authentication)
     - [Register](#register)
     - [Login](#login)
-    - [Logout](#logout)
+    - [Sessions](#Sessions)
 2. [Products](#products)
     - [Get All Products](#get-all-products)
     - [Create Product](#create-product)
