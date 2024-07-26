@@ -2,8 +2,8 @@
 | Member                             | Student ID        |  University                                  |
 |------------------------------------|-------------------|---------------------------------------------|
 | Yoga Ciwa Patra             | 20210801190 | Universitas Esa Unggul            | 
-| Ryan Harun Barlonggo | 20210801 | Universitas Esa Unggul            | 
-| Euaggelion Nathan   | 20210801 |  Universitas Esa Unggul    | 
+| Ryan Harun Barlonggo | 20210801246 | Universitas Esa Unggul            | 
+| Euaggelion Nathan   | 20210801239 |  Universitas Esa Unggul    | 
 
 ### TUGAS AKHIR MATA KULIAH ARSITEKTUR BERBASIS LAYANAN
 <p align="Justify">
