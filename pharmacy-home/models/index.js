@@ -13,6 +13,8 @@ const sequelize = new Sequelize(
 const User = require('./user')(sequelize, DataTypes);
 const Product = require('./product')(sequelize, DataTypes);
 const Payment = require('./payment')(sequelize, DataTypes);
+const Session = require('./session')(sequelize, DataTypes);
+
 
 // Definisikan hubungan
 User.hasMany(Payment);
@@ -20,4 +22,8 @@ Payment.belongsTo(User);
 Product.hasMany(Payment);
 Payment.belongsTo(Product);
 
-module.exports = { sequelize, User, Product, Payment };
+// Add this relationship if necessary
+User.hasMany(Session);
+Session.belongsTo(User);
+
+module.exports = { sequelize, User, Product, Payment, Session };  // Add Session to exports

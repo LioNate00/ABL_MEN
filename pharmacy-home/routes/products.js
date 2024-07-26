@@ -6,6 +6,7 @@ const router = express.Router();
 
 // Create Product (admin only)
 router.post('/', authenticateToken, async (req, res) => {
+  console.log(`User Role: ${req.user.role}`); // Add this line
   if (req.user.role !== 'admin') {
     return res.status(403).json({ message: 'Access denied' });
   }

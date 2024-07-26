@@ -8,8 +8,11 @@ dotenv.config();
 
 const rateLimiter = require('./middleware/rateLimit');
 const apiKeyMiddleware = require('./middleware/apiKey');
+const { authenticateToken } = require('./middleware/auth');
 const authRouter = require('./routes/auth');
 const productsRouter = require('./routes/products');
+const sessionRoutes = require('./routes/sessions');
+const paymentRoutes = require('./routes/payments');
 
 const app = express();
 
@@ -24,7 +27,9 @@ app.use(apiKeyMiddleware); // Ensure API Key Middleware is here
 
 // Routes
 app.use('/api/auth', authRouter);
-app.use('/api/products', productsRouter);
+app.use('/api/products', authenticateToken, productsRouter);
+app.use('/api/sessions', sessionRoutes);
+app.use('/api/payments', paymentRoutes);
 
 // Database Sync
 const { sequelize } = require('./models');

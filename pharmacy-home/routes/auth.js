@@ -1,7 +1,7 @@
 // routes/auth.js
 const express = require('express');
 const bcrypt = require('bcryptjs');
-const { User } = require('../models');
+const { User, Session } = require('../models');
 const { generateToken } = require('../middleware/auth');
 const router = express.Router();
 
@@ -27,6 +27,11 @@ router.post('/login', async (req, res) => {
     }
     const token = generateToken(user);
     res.json({ token });
+    // Create session entry
+    await Session.create({
+      userId: user.id,
+      loginTime: new Date()
+    });
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
