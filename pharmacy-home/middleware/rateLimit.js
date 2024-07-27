@@ -1,9 +1,10 @@
-// middleware/rateLimit.js
 const rateLimit = require('express-rate-limit');
 
+// Apply rate limiting to all requests
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // limit each IP to 100 requests per windowMs
+  windowMs: 60 * 1000, // 1 minute
+  max: 5, // Limit each IP to 5 requests per `window` (here, per minute)
+  message: 'Too many requests from this IP, please try again after a minute'
 });
 
-module.exports = limiter;
+app.use(limiter);

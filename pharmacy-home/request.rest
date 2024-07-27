@@ -79,3 +79,27 @@ GET http://localhost:3000/api/payments
 Authorization: Bearer <YOUR_USER_JWT_TOKEN>
 
 
+### Limit Testing!!
+### Test Rate Limiting
+GET http://localhost:3000/api/products
+Authorization: Bearer <YOUR_JWT_TOKEN>
+
+### Test Rate Limiting
+GET http://localhost:3000/api/products
+Authorization: Bearer <YOUR_JWT_TOKEN>
+
+### Test Rate Limiting
+GET http://localhost:3000/api/products
+Authorization: Bearer <YOUR_JWT_TOKEN>
+
+### Test Rate Limiting
+GET http://localhost:3000/api/products
+Authorization: Bearer <YOUR_JWT_TOKEN>
+
+### Test Rate Limiting
+GET http://localhost:3000/api/products
+Authorization: Bearer <YOUR_JWT_TOKEN>
+
+### Test Rate Limiting - Should Fail
+GET http://localhost:3000/api/products
+Authorization: Bearer <YOUR_JWT_TOKEN>
